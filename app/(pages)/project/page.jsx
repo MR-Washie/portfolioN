@@ -6,7 +6,8 @@ import Image from "next/image";
 
 const Project = async () => {
 
-    const [project] = await db.execute("select * from project order by created_at desc")
+  const [project] = await db.execute("select * from project order by created_at desc")
+
 
   return (
     <section className="min-h-screen bg-black text-white px-4 sm:px-6 md:px-10 lg:px-20 py-16 sm:py-20">
