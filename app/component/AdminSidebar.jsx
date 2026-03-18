@@ -10,11 +10,16 @@ import { MdLogout } from "react-icons/md";
 
 export default function AdminSidebar() {
   const router = useRouter();
-  const handleLogout = () => {
-    
-    document.cookie = "admin=false; path=/";
+
+
+  const handleLogout = async () => {
+    await fetch("/api/logout", {
+      method: "POST",
+    }).then(() => {
+      router.push("/");
+    });
     router.push("/");
-  }
+  };
 
   const pathname = usePathname();
 
